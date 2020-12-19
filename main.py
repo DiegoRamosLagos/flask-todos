@@ -2,7 +2,12 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
-todos = ['Hacer la tarea', 'Cocinar', 'Seguir siendo super guapo']
+todos = ['Hacer la tarea', 'Cocinar', 'Buscar excusas para seguir viviendo']
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('404.html', error=error)
 
 
 @app.route('/')

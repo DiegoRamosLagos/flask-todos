@@ -3,15 +3,15 @@
 
 {% block title %}
     {{super()}}
-    Bienvenido
+    Welcome
 {% endblock title %}
 {% block content %}
     {%if user_ip%}
         <h1>
-            Hello World Platzi, tu IP es {{ user_ip }}
+            Hello World Platzi, your IP is {{ user_ip }}
         </h1>
     {%else%}
-        <a href="{{url_for('index')}}">Ir a inicio</a>
+        <a href="{{url_for('index')}}">Go Home</a>
     {%endif%}
     <ul>
     {% for todo in todos %}
